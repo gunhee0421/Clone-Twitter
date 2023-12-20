@@ -1,13 +1,17 @@
-import { auth } from "../firebase";
+import PostTweetForm from "../component/post-tweet-form.tsx";
+import styled from "styled-components";
+import Timeline from "../component/timeline.tsx";
 
+const Wrapper = styled.div`
+  display: grid;
+  gap: 50px;
+  grid-template-rows: 1fr 5fr;
+`;
 export default function Home(){
-    const logout=()=>{
-        auth.signOut();
-    }
-
     return (
-        <h1>
-            <button onClick={logout}>Log Out</button>
-        </h1>
+        <Wrapper>
+            <PostTweetForm/>
+            <Timeline/>
+        </Wrapper>
     );
 }

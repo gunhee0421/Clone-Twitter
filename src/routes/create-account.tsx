@@ -4,7 +4,6 @@ import {auth} from "../firebase.ts";
 import {Link, useNavigate} from "react-router-dom";
 import { FirebaseError } from "firebase/app";
 import {Form, Input, Switcher, Title, Wrapper, Error} from "../component/auth-component.tsx";
-import GithubBtn from "../component/github-btn.tsx";
 
 export default function CreateAccount() {
     const navigate = useNavigate();
@@ -61,7 +60,6 @@ export default function CreateAccount() {
             <Switcher>
                 Already hava an account? <Link to="/login">Log in &rarr;</Link>
             </Switcher>
-            <GithubBtn/>
         </Wrapper>
     );
 }
