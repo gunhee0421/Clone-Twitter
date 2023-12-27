@@ -38,6 +38,18 @@ const DeletButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
+const EditButton = styled.button`
+  margin: 0px 10px;
+  background-color: deepskyblue;
+  color: white;
+  font-weight: 600;
+  border: 0;
+  font-size: 12px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+`;
 export default function Tweet({username, photo, tweet, userId, id}:ITweet){
     const user = auth.currentUser;
     const onDelete=async()=>{
@@ -53,12 +65,24 @@ export default function Tweet({username, photo, tweet, userId, id}:ITweet){
             //
         }
     }
+    const onEdit=async()=>{
+        const ok = confirm("Are you change photo?");
+        if(!ok || user?.uid !== userId) return;
+        try{
+
+        } catch (e){
+            console.log(e);
+        } finally {
+            //
+        }
+    }
     return (
         <Wrapper>
             <Column>
                 <Username>{username}</Username>
                 <Payload>{tweet}</Payload>
                 {user?.uid === userId ? <DeletButton onClick={onDelete}>Delete</DeletButton> : null}
+                {user?.uid === userId ? <EditButton  onClick={onEdit}>Edit</EditButton> : null }
             </Column>
             {photo ? <Column>
                 <Photo src={photo}/>

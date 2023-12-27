@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   gap: 10px;
   flex-direction: column;
   overflow-y: scroll;
-  height: 500px;
+  height: 600px;
 `;
 export interface ITweet{
     id: string;

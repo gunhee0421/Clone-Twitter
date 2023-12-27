@@ -47,7 +47,6 @@ export default function Layout() {
             navigate("/login");
         }
     }
-
     return (
         <Wrapper>
             <Menu>
